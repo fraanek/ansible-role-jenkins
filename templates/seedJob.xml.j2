@@ -18,7 +18,7 @@
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.42">
     <script>node(){
     cleanWs()
-    sh &quot;cp -r {{ jenkins2_home_directory }}/{{ jenkins2_seed_job_template }} .&quot;
+    sh &quot;cp -r {{ jenkins2_home_directory }}/{{ jenkins2_seed_job_template | basename }} .&quot;
     jobDsl ignoreExisting: {{ jenkins2_seed_job_ignore_existing | lower }}, targets: &apos;./{{ jenkins2_seed_job_template }}&apos;
 }</script>
     <sandbox>true</sandbox>
